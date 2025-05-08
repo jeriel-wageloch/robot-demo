@@ -3,6 +3,9 @@ name: Run Robot Framework Tests
 on:
   push:
     branches: [ master ]  # or 'main' if that's your branch name
+  schedule:
+    # This cron expression runs the test every day at 2:00 AM UTC
+    - cron: '0 4 * * *'
 
 jobs:
   robot-tests:
