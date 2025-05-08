@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+Library    DateTime
 Resource   ../resources/variables.robot
 
 *** Test Cases ***
