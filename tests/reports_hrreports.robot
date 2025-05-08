@@ -4,7 +4,7 @@ Resource   ../resources/variables.robot
 
 *** Test Cases ***
 Login And Navigate To Reports
-    Open Browser    ${URL}    Chrome
+    Open Browser    ${URL}    Firefox
     Input Text      xpath=//*[@id="txtemailaddr"]    ${USER}
     Input Text      xpath=//*[@id="txtpassword"]     ${PASS}
     Click Button    xpath=//*[@id="btnlogin"]
@@ -13,4 +13,5 @@ Login And Navigate To Reports
     Page Should Contain Element    id=MainContent_ctl01_exptitle
     Sleep    2
     Close Browser
+
 
