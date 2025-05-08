@@ -6,7 +6,8 @@ Resource   ../resources/variables.robot
 *** Test Cases ***
 Login And Navigate To Reports
     ${timestamp}=    Get Current Date    result_format=%Y%m%d%H%M%S
-    ${user_data_dir}=    Set Variable    ${EXECDIR}/chrome_user_data_${timestamp}
+    ${random_string}=    Generate Random String    length=8
+    ${user_data_dir}=    Set Variable    ${EXECDIR}/chrome_user_data_${timestamp}_${random_string}
     Open Browser    ${URL}    Chrome    --user-data-dir=${user_data_dir}
     Input Text      xpath=//*[@id="txtemailaddr"]    ${USER}
     Input Text      xpath=//*[@id="txtpassword"]     ${PASS}
