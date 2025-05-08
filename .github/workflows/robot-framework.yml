@@ -4,6 +4,8 @@ name: Robot Framework Tests
 on:
   push:
     branches: [ master ]
+  schedule:
+    - cron: '0 21 * * *'
   workflow_dispatch:
 
 jobs:
