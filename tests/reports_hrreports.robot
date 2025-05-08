@@ -4,7 +4,9 @@ Resource   ../resources/variables.robot
 
 *** Test Cases ***
 Login And Navigate To Reports
-    Open Browser    ${URL}    Chrome    --user-data-dir=${EXECDIR}/chrome_user_data
+    ${timestamp}=    Get Current Date    result_format=%Y%m%d%H%M%S
+    ${user_data_dir}=    Set Variable    ${EXECDIR}/chrome_user_data_${timestamp}
+    Open Browser    ${URL}    Chrome    --user-data-dir=${user_data_dir}
     Input Text      xpath=//*[@id="txtemailaddr"]    ${USER}
     Input Text      xpath=//*[@id="txtpassword"]     ${PASS}
     Click Button    xpath=//*[@id="btnlogin"]
