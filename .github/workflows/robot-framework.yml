@@ -25,3 +25,12 @@ jobs:
     - name: Run Robot Framework tests
       run: |
         robot tests/
+
+    - name: Upload Robot Framework logs
+      uses: actions/upload-artifact@v4
+      with:
+        name: robot-logs
+        path: |
+          log.html
+          report.html
+          output.xml
